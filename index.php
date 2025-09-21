@@ -1,4 +1,13 @@
 <?php
+// ========= HEALTHCHECK =========
+if (($_SERVER['REQUEST_URI'] ?? '/') === '/health') {
+  header('Content-Type: text/plain; charset=utf-8');
+  http_response_code(200);
+  echo 'ok';
+  exit;
+}
+
+<?php
 /* index.php — Gerador de PIX (copia e cola) com token da PushinPay
  *
  * ⚠️ Token fixo (do seu arquivo): 47525|lMigYjG2owjwmBCmPusi5WZ9G90ETU9zB2eg4HVmd79bbd68
@@ -99,3 +108,4 @@ button { margin-top:10px; padding:10px 16px; border:none; border-radius:6px; bac
   </div>
 </body>
 </html>
+
